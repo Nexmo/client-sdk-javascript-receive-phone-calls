@@ -18,18 +18,18 @@
     new ConversationClient()
       .login(USER_JWT)
       .then(application => {
-        notification.textContent = `You've logged in with the user ${application.me.user.name}`;
+        notification.textContent = `You've logged in with the user ${application.me.name}`;
         application.on("member:call", (member, call) => {
           notification.textContent = `You're receiving a call`;
-          document.getElementById("answer").addEventListener(click, () => {
+          document.getElementById("answer").addEventListener("click", () => {
             call.answer();
             notification.textContent = `You're in a call`;
           })
-          document.getElementById("reject").addEventListener(click, () => {
+          document.getElementById("reject").addEventListener("click", () => {
             call.reject();
             notification.textContent = `You rejected the call`;
           })
-          document.getElementById("hangup").addEventListener(click, () => {
+          document.getElementById("hangup").addEventListener("click", () => {
             call.hangUp();
             notification.textContent = "The call has ended";
           })
