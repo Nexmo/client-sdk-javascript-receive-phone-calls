@@ -2,7 +2,7 @@
 
 <head>
   <title>Receive Phone Calls</title>
-  <script src="./node_modules/nexmo-client/dist/conversationClient.js"></script>
+  <script src="./node_modules/nexmo-client/dist/nexmoClient.js"></script>
 </head>
 
 <body>
@@ -15,8 +15,8 @@
 
     let notification = document.getElementById("notification");
 
-    new ConversationClient()
-      .login(USER_JWT)
+    new NexmoClient()
+      .createSession(USER_JWT)
       .then(application => {
         notification.textContent = `You've logged in with the user ${application.me.name}`;
         application.on("member:call", (member, call) => {
