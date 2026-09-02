@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "nexmo-client": "^9.0.0"
+    "nexmo-client": "^9.6.2"
   },
   "devDependencies": {},
   "scripts": {
